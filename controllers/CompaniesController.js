@@ -7,7 +7,7 @@ exports.enrichCompanyData = async (req, res) => {
     address,
     website,
   });
-
+console.log(req.body)
   const reviewSummary = await enrichService.summarizeReviews(reviews, companyName);
 
   try {
