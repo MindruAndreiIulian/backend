@@ -11,8 +11,8 @@ app.use(cors({
 
 app.use(express.json());
 
-app.listen(80, function () {
-  console.log(`Example app listening on port ${80}!`);
+app.listen(3001, function () {
+  console.log(`Example app listening on port ${3001}!`);
 });
 
 app.use("/api/companies", companiesRouter)
