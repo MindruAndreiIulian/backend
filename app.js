@@ -6,13 +6,13 @@ const companiesRouter = require('./routes/CompaniesRoutes')
 const  app = express();
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL
+    origin: "*"
 }));
 
 app.use(express.json());
 
-app.listen(process.env.APP_PORT, function () {
-  console.log(`Example app listening on port ${process.env.APP_PORT}!`);
+app.listen(80, function () {
+  console.log(`Example app listening on port ${80}!`);
 });
 
 app.use("/api/companies", companiesRouter)

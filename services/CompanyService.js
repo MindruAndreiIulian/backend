@@ -12,7 +12,7 @@ exports.enrichData = async (payload) => {
   try {
     const response = await axios.post(constants.VERIDION_API, data, {
       headers: {
-        "X-api-key": process.env.VERIDION_KEY,
+        "X-api-key": "T0U9qKCVhtiDBUdblJovoz1Af70P7TeNsYOjWJ7K8gXngbB97PGnMAo4JNiA",
         "Content-type": "application/json",
       },
     });
@@ -38,7 +38,7 @@ exports.summarizeReviews = async (reviews, company) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_KEY}`,
+          Authorization: `Bearer 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`,
         },
       }
     );
