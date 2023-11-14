@@ -6,8 +6,14 @@ exports.enrichCompanyData = async (req, res) => {
     companyName,
     address,
   });
-console.log(req.body)
-  const reviewSummary = await enrichService.summarizeReviews(reviews, companyName);
+
+  let reviewSummary
+  
+  try{
+    reviewSummary = await enrichService.summarizeReviews(reviews, companyName);
+  }catch(e){
+    reviewSummary = `An error occured when summarizing reviews: ${e.message}`
+  }
 
   try {
     res.json({
