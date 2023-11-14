@@ -2,11 +2,10 @@ const constants = require("../constants");
 const axios = require("axios");
 
 exports.enrichData = async (payload) => {
-  const { companyName, address, website } = payload;
+  const { companyName, address } = payload;
   const data = {
     commercial_names: [companyName],
-    address_txt: address,
-    website,
+    address_txt: address
   };
 
   try {
