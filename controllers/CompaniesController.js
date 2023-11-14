@@ -1,7 +1,7 @@
 const enrichService = require("../services/CompanyService");
 
 exports.enrichCompanyData = async (req, res) => {
-  const { companyName, address, reviews } = req.body;
+  const { companyName, address, reviews, openaiKey } = req.body;
   const enrichedData = await enrichService.enrichData({
     companyName,
     address,
@@ -10,7 +10,7 @@ exports.enrichCompanyData = async (req, res) => {
   let reviewSummary
   
   try{
-    reviewSummary = await enrichService.summarizeReviews(reviews, companyName);
+    reviewSummary = await enrichService.summarizeReviews(reviews, companyName, openaiKey);
   }catch(e){
     reviewSummary = `An error occured when summarizing reviews: ${e.message}`
   }

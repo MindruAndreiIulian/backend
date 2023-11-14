@@ -22,7 +22,7 @@ exports.enrichData = async (payload) => {
   }
 };
 
-exports.summarizeReviews = async (reviews, company) => {
+exports.summarizeReviews = async (reviews, company, openaiKey) => {
   try {
     const prompt = `Summarize the following reviews about the ${company} products:\n${reviews
       .map((review) => review.text.slice(0, 300))
@@ -37,7 +37,7 @@ exports.summarizeReviews = async (reviews, company) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${openaiKey}`,
         },
       }
     );
