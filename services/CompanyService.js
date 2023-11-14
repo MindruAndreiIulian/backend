@@ -38,7 +38,7 @@ exports.summarizeReviews = async (reviews, company) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer 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`,
         },
       }
     );

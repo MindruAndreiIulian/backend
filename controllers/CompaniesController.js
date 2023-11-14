@@ -1,7 +1,7 @@
 const enrichService = require("../services/CompanyService");
 
 exports.enrichCompanyData = async (req, res) => {
-  const { companyName, address, website, reviews } = req.body;
+  const { companyName, address, reviews } = req.body;
   const enrichedData = await enrichService.enrichData({
     companyName,
     address,
